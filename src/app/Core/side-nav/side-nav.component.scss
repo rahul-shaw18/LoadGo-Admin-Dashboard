@@ -1,0 +1,29 @@
+.sidenav {
+  background-color: #212529;
+  color: #5b646b;
+  height: calc(100vh - 55px);
+  overflow: auto;
+  .menu-options {
+    border-radius: 5px;
+    .menu-icon {
+      i {
+        width: 24px;
+        text-align: center;
+      }
+    }
+  }
+  .menu-options.active {
+    background-color: #fff;
+  }
+  .menu-options:hover {
+    background-color: #fff;
+    color: black !important;
+
+    // .menu-icon {
+    //   i {
+    //     width: 24px;
+    //     text-align: center;
+    //   }
+    // }
+  }
+}

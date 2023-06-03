@@ -1,0 +1,27 @@
+<nav class="nav navbar navbar-expand-lg bg-primary p10">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/home">
+            <img src="../../../assets/admin panel img/van1.png" alt="Logo" width="40" height="24"
+                class="d-inline-block align-text-top">
+            <span class="ml15" style="color:#fff">LoadGo Admin Panel</span>
+        </a>
+        <div class="btn-group" style="cursor: pointer;">
+
+            <div data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                <i class="fa-solid fa-user p5" style="border:1px solid #fff; border-radius:5px"></i><span
+                    class="ml10">Admin</span>
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
+                <li><a class="dropdown-item" routerLink="/profile"><i class="fa-solid fa-address-card"></i><span
+                            class="ml15">Profile</span></a></li>
+                <li><a class="dropdown-item" routerLink="/change-password"><i class="fa-solid fa-gear"></i><span class="ml15">Change
+                            Password</span></a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" routerLink="/logout"><i class="fa-solid fa-right-from-bracket"></i><span
+                            class="ml15">Logout</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

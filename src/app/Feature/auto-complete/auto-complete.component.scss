@@ -1,0 +1,38 @@
+:host {
+  ::ng-deep .autocomplete {
+    height: auto !important;
+    width: 100%;
+
+  }
+  ::ng-deep .mat-mdc-form-field {
+    font-size: var(--fnt-regular);
+    width: 100%;
+    color: black;
+    background-color: white;
+    outline: none !important;
+    border-radius: 5px;
+    height: 40px;
+
+  }
+  ::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix{
+    padding: 8px;
+
+  }
+  ::ng-deep .mat-mdc-form-field-subscript-wrapper{
+    display: none;
+
+  }
+
+  ::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined {
+    width: 100%;
+    height: 31px;
+
+  }
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  outline: none;
+}
+}
+::ng-deep .mat-mdc-option .mdc-list-item__primary-text {
+  width: 100%;
+
+}

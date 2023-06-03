@@ -1,0 +1,16 @@
+
+<div class="autocomplete nopadding">
+    <mat-form-field appearance="outline" class="mr10">
+        <input matInput [placeholder]="placeholder" [matAutocomplete]="auto" (keyup)="onInput($event)"
+            [value]="providedOption">
+    </mat-form-field>
+    <mat-autocomplete class="height-of-auocomplete" #auto="matAutocomplete">
+        <!-- <perfect-scrollbar> -->
+            <ng-container>
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
+                    <div class="option" (click)="onSelectedOptions(option)">{{option.name}}</div>
+                </mat-option>
+            </ng-container>
+        <!-- </perfect-scrollbar> -->
+    </mat-autocomplete>
+</div>

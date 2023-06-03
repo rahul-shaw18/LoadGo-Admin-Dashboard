@@ -1,0 +1,14 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="sidenav p10">
+    <div class="search-bar">
+        <app-auto-complete  [placeholder]="'Search...'"[providedOption]="''" (selectedOptions)="onSelectedOption($event)" (inputValue)="onInputValue($event)"></app-auto-complete>
+    </div>
+    <div class="menu-options mt10" [ngClass]="menuOption.isSelected?'active':''" *ngFor="let menuOption of filterMenuOptions">
+        <div class="d-flex  p10 cur-pointer" 
+            (click)="onMenuItemSelected(menuOption)" [routerLink]="menuOption.route">
+            <span class="menu-icon mr8"><i class="{{menuOption.icon}}"></i></span>
+            <div class="menu-option">{{menuOption.name}}</div>
+        </div>
+    </div>
+
+</div>
