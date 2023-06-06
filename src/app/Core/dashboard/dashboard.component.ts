@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit, AfterViewInit } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { TableService } from 'src/app/Shared/services/table.service';
+import { filter } from './../../Shared/interface/filter-interface';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit, AfterViewInit {
+  @ViewChild(MatPaginator) paginator?: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  dataSource: any;
   cardArray = [
     {
       _id: 0,
@@ -78,5 +86,35 @@ export class DashboardComponent {
       ],
     },
   ];
-  
+
+  tableData: any;
+
+  constructor(private tableService: TableService) {}
+
+  ngOnInit() {
+    this.getAll();
+  }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+  // table
+  displayedColumns: string[] = [
+    'rideId',
+    'riderName',
+    'driverName',
+    'pickDropAddress',
+    'date',
+    'rideFare',
+    'status',
+  ];
+
+  getAll() {
+    this.tableData = this.tableService.getTableData();
+    this.dataSource = new MatTableDataSource(this.tableData);
+  }
+  onFilter(e: any) {
+    const filterValue = (e.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue;
+  }
 }

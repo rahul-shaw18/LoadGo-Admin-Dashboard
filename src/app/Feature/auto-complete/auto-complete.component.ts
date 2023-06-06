@@ -14,7 +14,7 @@ export class AutoCompleteComponent {
   @Input() providedOption?: any;
   myControl = new FormControl('');
   filteredOptions: Observable<any> | undefined;
-  @Input('options') options!: any;
+  @Input('options') options: any;
   @Output('selectedOptions') selectedOptions = new EventEmitter<any>();
   @Output('inputValue') inputValue = new EventEmitter<any>();
 
@@ -26,10 +26,12 @@ export class AutoCompleteComponent {
       startWith(''),
       map((value: any) => {
         const name = typeof value === 'string' ? value : value?.displayName;
-        return name ? this._filter(name as string) : this.options.slice();
+        return name ? this._filter(name as string) : this.options?.slice();
       })
     );
-    this.temp = this.options[0];
+    if (this.options) {
+      this.temp = this.options[0];
+    }
     console.log(this.temp);
   }
   onInput(e: any) {
@@ -46,7 +48,7 @@ export class AutoCompleteComponent {
     console.log(value);
     const filterValue = value.toLowerCase();
 
-    return this.options.filter((option:any) =>
+    return this.options.filter((option: any) =>
       option.displayName.toLowerCase().includes(filterValue)
     );
   }

@@ -1,8 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 body {
   margin: 0;
@@ -34,20 +41,21 @@ body {
 }
 
 @font-face {
-  font-family: 'loadgo';
-  src:  url('./assets/fonts/loadgo.eot?kfjpyv');
-  src:  url('./assets/fonts/loadgo.eot?kfjpyv#iefix') format('embedded-opentype'),
-    url('./assets/fonts/loadgo.ttf?kfjpyv') format('truetype'),
-    url('./assets/fonts/loadgo.woff?kfjpyv') format('woff'),
-    url('./assets/fonts/loadgo.svg?kfjpyv#loadgo') format('svg');
+  font-family: "loadgo";
+  src: url("./assets/fonts/loadgo.eot?kfjpyv");
+  src: url("./assets/fonts/loadgo.eot?kfjpyv#iefix") format("embedded-opentype"),
+    url("./assets/fonts/loadgo.ttf?kfjpyv") format("truetype"),
+    url("./assets/fonts/loadgo.woff?kfjpyv") format("woff"),
+    url("./assets/fonts/loadgo.svg?kfjpyv#loadgo") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'loadgo' !important;
+  font-family: "loadgo" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -63,7 +71,6 @@ body {
 .icon-money:before {
   content: "\e900";
 }
-
 
 html,
 body {

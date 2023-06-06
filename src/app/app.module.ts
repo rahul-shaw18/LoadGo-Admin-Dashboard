@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './Core/home/home.component';
 import { AuthenticationComponent } from './Feature/authentication/authentication.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AutoCompleteComponent } from './Feature/auto-complete/auto-complete.component';
 import { MaterialModule } from './material/material.module';
 import { DashboardComponent } from './Core/dashboard/dashboard.component';
@@ -14,7 +14,6 @@ import { RidersComponent } from './Core/riders/riders.component';
 import { NavbarComponent } from './Core/navbar/navbar.component';
 import { SideNavComponent } from './Core/side-nav/side-nav.component';
 import { ProfileComponent } from './Core/navbar/NavbarComponent/profile/profile.component';
-
 
 @NgModule({
   declarations: [
@@ -33,6 +32,7 @@ import { ProfileComponent } from './Core/navbar/NavbarComponent/profile/profile.
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
