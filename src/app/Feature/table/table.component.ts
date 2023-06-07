@@ -12,7 +12,7 @@ import { filter } from './../../Shared/interface/filter-interface';
 export class TableComponent implements OnInit, AfterViewInit {
   @Input() tableData: any;
   @Input() displayedColumns: any;
-  @Input() tableToDisplay!:any
+  @Input() tableToDisplay!: any;
   dataSource: any;
   @ViewChild(MatPaginator) paginator?: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -31,5 +31,14 @@ export class TableComponent implements OnInit, AfterViewInit {
   onFilter(e: any) {
     const filterValue = (e.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue;
+  }
+
+  onRowClicked(row: any) {
+    console.log(row);
+  }
+
+  onClicked(element: any) {
+    console.log(element);
+    
   }
 }
