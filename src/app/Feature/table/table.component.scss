@@ -10,3 +10,27 @@
 table {
   width: 100%;
 }
+
+.mat-mdc-table tbody,
+.mat-mdc-table tfoot,
+.mat-mdc-table thead,
+.mat-mdc-cell,
+.mat-mdc-footer-cell,
+.mat-mdc-header-row,
+.mat-mdc-row,
+.mat-mdc-footer-row,
+.mat-mdc-table .mat-mdc-header-cell {
+  vertical-align: middle;
+}
+.mat-mdc-row .mat-mdc-cell {
+  // border-top: 2px solid transparent;
+  // border-bottom: 2px solid transparent;
+  border-top: 1px solid #5b646b;
+  border-top: 1px solid #5b646b;
+  cursor: pointer;
+}
+
+tr.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: black;;
+}
+
