@@ -16,6 +16,8 @@ import { SideNavComponent } from './Core/side-nav/side-nav.component';
 import { ProfileComponent } from './Core/navbar/NavbarComponent/profile/profile.component';
 import { TableComponent } from './Feature/table/table.component';
 import { RidesComponent } from './Core/rides/rides.component';
+import { DriversComponent } from './Core/drivers/drivers.component';
+import { VehicleComponent } from './Core/vehicle/vehicle.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { RidesComponent } from './Core/rides/rides.component';
     ProfileComponent,
     TableComponent,
     RidesComponent,
+    DriversComponent,
+    VehicleComponent,
   ],
   imports: [
     BrowserModule,

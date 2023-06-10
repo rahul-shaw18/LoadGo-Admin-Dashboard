@@ -36,9 +36,9 @@ export const menuOptions = [
   // },
   {
     id: 6,
-    name: 'Vehicle Type',
+    name: 'Vehicle',
     icon: '',
-    route: 'vehicle-type',
+    route: 'vehicle',
     isSelected: false,
   },
   // {
@@ -48,13 +48,13 @@ export const menuOptions = [
   //   icon: '',
   //   isSelected: false,
   // },
-  {
-    id: 8,
-    name: 'Driver Taxi',
-    route: 'driver-taxi',
-    icon: '',
-    isSelected: false,
-  },
+  // {
+  //   id: 8,
+  //   name: 'Driver Taxi',
+  //   route: 'driver-taxi',
+  //   icon: '',
+  //   isSelected: false,
+  // },
   {
     id: 9,
     name: 'Earning Reports',

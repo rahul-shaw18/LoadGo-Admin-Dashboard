@@ -1,0 +1,19 @@
+.container {
+  height: 80vh;
+
+  .container {
+    .header-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+    }
+    hr{
+        margin: 0.5rem;
+    }
+    .table {
+      height: 85vh;
+      overflow-y: auto;
+    }
+  }
+}

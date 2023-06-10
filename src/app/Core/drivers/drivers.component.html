@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Drivers</h1>
+    <hr />
+    <div class="container">
+        <div class="header-section">
+            <app-auto-complete [placeholder]="'Search...'"
+                [providedOption]="driversOptions[0].displayName" [options]="driversOptions"
+                (selectedOptions)="onSelectedOption($event)" (inputValue)="onInputValue($event)"></app-auto-complete>
+            <button class="add-rider-btn" mat-flat-button color="primary">Add Driver</button>
+        </div>
+        <hr />
+        <div class="table">
+            <app-table [tableData]="tableData" [displayedColumns]="displayedColumns"
+                [tableToDisplay]="'Rides'"></app-table>
+        </div>
+    </div>
+
+</div>
