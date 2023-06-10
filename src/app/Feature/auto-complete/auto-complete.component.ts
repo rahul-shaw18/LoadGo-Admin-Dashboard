@@ -22,6 +22,7 @@ export class AutoCompleteComponent {
 
   ngOnInit() {
     // console.log('providedOption', this.providedOption);
+    // console.log(this.options);
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map((value: any) => {

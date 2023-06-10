@@ -5,6 +5,7 @@ import { AuthenticationComponent } from './Feature/authentication/authentication
 import { DashboardComponent } from './Core/dashboard/dashboard.component';
 import { RidersComponent } from './Core/riders/riders.component';
 import { ProfileComponent } from './Core/navbar/NavbarComponent/profile/profile.component';
+import { RidesComponent } from './Core/rides/rides.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   // sideNavBar Component
   { path: 'dashboard', component: DashboardComponent },
   { path: 'riders', component: RidersComponent },
+  { path: 'rides', component: RidesComponent },
 
   // navbar component
   { path: 'profile', component: ProfileComponent },

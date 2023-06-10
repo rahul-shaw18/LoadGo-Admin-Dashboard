@@ -15,6 +15,7 @@ import { NavbarComponent } from './Core/navbar/navbar.component';
 import { SideNavComponent } from './Core/side-nav/side-nav.component';
 import { ProfileComponent } from './Core/navbar/NavbarComponent/profile/profile.component';
 import { TableComponent } from './Feature/table/table.component';
+import { RidesComponent } from './Core/rides/rides.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { TableComponent } from './Feature/table/table.component';
     SideNavComponent,
     ProfileComponent,
     TableComponent,
+    RidesComponent,
   ],
   imports: [
     BrowserModule,

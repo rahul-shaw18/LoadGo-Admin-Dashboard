@@ -7,8 +7,8 @@
     <mat-autocomplete class="height-of-auocomplete" #auto="matAutocomplete">
         <!-- <perfect-scrollbar> -->
             <ng-container>
-                <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
-                    <div class="option" (click)="onSelectedOptions(option)">{{option.name}}</div>
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option.displayName">
+                    <div class="option" (click)="onSelectedOptions(option)">{{option.displayName}}</div>
                 </mat-option>
             </ng-container>
         <!-- </perfect-scrollbar> -->

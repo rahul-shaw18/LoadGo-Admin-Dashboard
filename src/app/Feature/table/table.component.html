@@ -121,3 +121,65 @@
     </table>
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons=""></mat-paginator>
 </section>
+
+<section *ngIf="tableToDisplay=='Rides'">
+    <div class="filter-section">
+        <input placeholder="Filter" (keyup)="onFilter($event)" />
+    </div>
+
+    <table mat-table matSort [dataSource]="dataSource" class="table">
+        <!-- Ride Id. Column -->
+        <ng-container matColumnDef="rideId">
+            <th mat-header-cell mat-sort-header="" *matHeaderCellDef>Ride Id.</th>
+            <td mat-cell *matCellDef="let element">{{ element.rideId }}</td>
+        </ng-container>
+
+        <!-- Rider Name Column -->
+        <ng-container matColumnDef="riderName">
+            <th mat-header-cell mat-sort-header="" *matHeaderCellDef>Rider Name</th>
+            <td mat-cell *matCellDef="let element">{{ element.riderName }}</td>
+        </ng-container>
+
+        <!-- Driver Name Column -->
+        <ng-container matColumnDef="driverName">
+            <th mat-header-cell mat-sort-header="" *matHeaderCellDef>
+                Driver Name
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.driverName }}</td>
+        </ng-container>
+
+        <!-- Pick / Drop Address Column -->
+        <ng-container matColumnDef="pickDropAddress">
+            <th mat-header-cell mat-sort-header="" *matHeaderCellDef>
+                Pick / Drop Address
+            </th>
+            <td mat-cell *matCellDef="let element">
+                {{ element.pickDropAddress }}
+            </td>
+        </ng-container>
+
+        <!-- Date Address Column -->
+        <ng-container matColumnDef="date">
+            <th mat-header-cell mat-sort-header="" *matHeaderCellDef>Date</th>
+            <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+        </ng-container>
+
+        <!-- Ride Fare Column -->
+        <ng-container matColumnDef="rideFare">
+            <th mat-header-cell mat-sort-header="" *matHeaderCellDef>Ride Fare</th>
+            <td mat-cell *matCellDef="let element">{{ element.rideFare }}</td>
+        </ng-container>
+
+        <!-- Status Column -->
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-raised-button color="primary" (click)="onClicked(element)">Approved</button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)="onRowClicked(row)" *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons=""></mat-paginator>
+</section>
