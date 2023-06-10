@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Earning Reports</h1>
+    <hr />
+    <div class="table">
+        <app-auto-complete class="auto-complete" [placeholder]="'Search...'"
+            [providedOption]="earningReportsOptions[0].displayName" [options]="earningReportsOptions"
+            (selectedOptions)="onSelectedOption($event)" (inputValue)="onInputValue($event)"></app-auto-complete>
+        <app-table [tableData]="tableData" [displayedColumns]="displayedColumns" [tableToDisplay]="'Rides'"></app-table>
+    </div>
+</div>

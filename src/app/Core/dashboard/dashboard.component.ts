@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
           cardContentHeading: 'Total Riders',
           cardContentSubheading: '329',
           cardColor: 'green',
+          route: '/riders',
         },
         {
           cardIcon: '../../../assets/dashboard icon/driver-dash.png',
@@ -27,20 +28,23 @@ export class DashboardComponent implements OnInit {
           cardContentHeading: 'Total Drivers',
           cardContentSubheading: '500',
           cardColor: 'green',
+          route: '/drivers',
         },
         {
           cardIcon: '../../../assets/dashboard icon/car.png',
           cardIconBGcolor: '#49978b',
-          cardContentHeading: 'Vehicle Type',
+          cardContentHeading: 'Vehicle',
           cardContentSubheading: '4',
           cardColor: 'green',
+          route: '/vehicle',
         },
         {
           cardIcon: '../../../assets/dashboard icon/money.png',
           cardIconBGcolor: '#49978b',
-          cardContentHeading: 'Total Drivers',
+          cardContentHeading: 'Revenue',
           cardContentSubheading: '500',
           cardColor: 'green',
+          route: '/earning-reports',
         },
       ],
     },
@@ -55,6 +59,7 @@ export class DashboardComponent implements OnInit {
           cardContentHeading: 'Total Ride',
           cardContentSubheading: '821',
           cardColor: 'green',
+          route: '/rides',
         },
         {
           cardIcon: '../../../assets/dashboard icon/car.png',
@@ -62,6 +67,7 @@ export class DashboardComponent implements OnInit {
           cardContentHeading: 'Cancel Ride',
           cardContentSubheading: '104',
           cardColor: 'green',
+          route: '/rides',
         },
         {
           cardIcon: '../../../assets/dashboard icon/money.png',
@@ -69,6 +75,7 @@ export class DashboardComponent implements OnInit {
           cardContentHeading: 'Running Ride',
           cardContentSubheading: '500',
           cardColor: 'green',
+          route: '/rides',
         },
         {
           cardIcon: '../../../assets/dashboard icon/person-circle.svg',
@@ -76,6 +83,7 @@ export class DashboardComponent implements OnInit {
           cardContentHeading: 'Completed',
           cardContentSubheading: '329',
           cardColor: 'green',
+          route: '/rides',
         },
       ],
     },
@@ -99,5 +107,4 @@ export class DashboardComponent implements OnInit {
     'rideFare',
     'status',
   ];
-
 }

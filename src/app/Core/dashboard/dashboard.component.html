@@ -8,7 +8,7 @@
                     <i class="{{ item.groupIcon }}"></i><span>{{ item.groupName }}</span>
                 </div>
                 <div class="card-wrapper">
-                    <div class="card" *ngFor="let card of item.card" [ngStyle]="{ background: card.cardColor }">
+                    <div class="card" *ngFor="let card of item.card" [ngStyle]="{ background: card.cardColor }" [routerLink]="card.route" >
                         <div class="icon" [ngStyle]="{ background: card.cardIconBGcolor }">
                             <img src="{{ card.cardIcon }}" />
                         </div>

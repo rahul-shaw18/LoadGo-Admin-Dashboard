@@ -18,6 +18,7 @@ import { TableComponent } from './Feature/table/table.component';
 import { RidesComponent } from './Core/rides/rides.component';
 import { DriversComponent } from './Core/drivers/drivers.component';
 import { VehicleComponent } from './Core/vehicle/vehicle.component';
+import { EarningReportsComponent } from './Core/earning-reports/earning-reports.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { VehicleComponent } from './Core/vehicle/vehicle.component';
     RidesComponent,
     DriversComponent,
     VehicleComponent,
+    EarningReportsComponent,
   ],
   imports: [
     BrowserModule,
