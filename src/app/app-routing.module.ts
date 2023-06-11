@@ -9,6 +9,7 @@ import { RidesComponent } from './Core/rides/rides.component';
 import { DriversComponent } from './Core/drivers/drivers.component';
 import { VehicleComponent } from './Core/vehicle/vehicle.component';
 import { EarningReportsComponent } from './Core/earning-reports/earning-reports.component';
+import { StatementComponent } from './Core/statement/statement.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'drivers', component: DriversComponent },
   { path: 'vehicle', component: VehicleComponent },
   { path: 'earning-reports', component: EarningReportsComponent },
+  { path: 'statement', component: StatementComponent },
 
   // navbar component
   { path: 'profile', component: ProfileComponent },

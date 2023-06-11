@@ -19,6 +19,7 @@ import { RidesComponent } from './Core/rides/rides.component';
 import { DriversComponent } from './Core/drivers/drivers.component';
 import { VehicleComponent } from './Core/vehicle/vehicle.component';
 import { EarningReportsComponent } from './Core/earning-reports/earning-reports.component';
+import { StatementComponent } from './Core/statement/statement.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { EarningReportsComponent } from './Core/earning-reports/earning-reports.
     DriversComponent,
     VehicleComponent,
     EarningReportsComponent,
+    StatementComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,17 @@
 <div class="container">
-  <h1>Dashboard</h1>
-  <hr />
+    <h1>Statement </h1>
+    <hr />
     <div class="body-section">
         <div class="parent">
-            <div class="child" *ngFor="let item of cardArray">
+            <div class="child">
                 <div class="header">
-                    <i class="{{ item.groupIcon }}"></i><span>{{ item.groupName }}</span>
+                    <app-auto-complete class="auto-complete" [placeholder]="'Search...'"
+                        [providedOption]="statementOptions[0].displayName" [options]="statementOptions"
+                        (selectedOptions)="onSelectedOption($event)"
+                        (inputValue)="onInputValue($event)"></app-auto-complete>
                 </div>
                 <div class="card-wrapper">
-                    <div class="card" *ngFor="let card of item.card" [ngStyle]="{ background: card.cardColor }" [routerLink]="card.route" >
+                    <div class="card" *ngFor="let card of cardArray" [ngStyle]="{ background: card.cardColor }">
                         <div class="icon" [ngStyle]="{ background: card.cardIconBGcolor }">
                             <img src="{{ card.cardIcon }}" />
                         </div>
@@ -21,7 +24,8 @@
             </div>
         </div>
         <section class="table">
-            <app-table [tableData]="tableData" [displayedColumns]="displayedColumns" [tableToDisplay]="'Dashboard'"></app-table>
+            <app-table [tableData]="tableData" [displayedColumns]="displayedColumns"
+                [tableToDisplay]="'Dashboard'"></app-table>
         </section>
     </div>
 </div>
