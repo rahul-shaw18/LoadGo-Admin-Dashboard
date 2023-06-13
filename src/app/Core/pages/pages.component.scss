@@ -1,0 +1,11 @@
+.container {
+  overflow-y: scroll;
+  height: 80vh;
+  .table {
+    .add-rider-btn {
+      float: right;
+      position: relative;
+      top: 5px;
+    }
+  }
+}

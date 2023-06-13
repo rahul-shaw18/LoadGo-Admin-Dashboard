@@ -20,6 +20,8 @@ import { DriversComponent } from './Core/drivers/drivers.component';
 import { VehicleComponent } from './Core/vehicle/vehicle.component';
 import { EarningReportsComponent } from './Core/earning-reports/earning-reports.component';
 import { StatementComponent } from './Core/statement/statement.component';
+import { ReviewRatingComponent } from './Core/review-rating/review-rating.component';
+import { PagesComponent } from './Core/pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { StatementComponent } from './Core/statement/statement.component';
     VehicleComponent,
     EarningReportsComponent,
     StatementComponent,
+    ReviewRatingComponent,
+    PagesComponent,
   ],
   imports: [
     BrowserModule,

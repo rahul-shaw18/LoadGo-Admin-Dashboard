@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Review and Rating </h1>
+    <hr />
+    <div class="body-section">
+        <div class="parent">
+            <div class="child">
+                <div class="header">
+                    <app-auto-complete class="auto-complete" [placeholder]="'Search...'"
+                        [providedOption]="ratingOptions[0].displayName" [options]="ratingOptions"
+                        (selectedOptions)="onSelectedOption($event)"
+                        (inputValue)="onInputValue($event)"></app-auto-complete>
+                </div>
+            </div>
+        </div>
+        <section class="table">
+            <app-table [tableData]="tableData" [displayedColumns]="displayedColumns"
+                [tableToDisplay]="'Dashboard'"></app-table>
+        </section>
+    </div>
+</div>
