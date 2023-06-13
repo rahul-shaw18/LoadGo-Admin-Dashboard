@@ -1,0 +1,48 @@
+.container {
+  overflow-y: auto;
+  height: 80vh;
+  .form {
+    padding: 2%;
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+    label{
+        width: 25%;
+    }
+    .details-container {
+      display: flex;
+      align-items: center;
+      //   gap: 5%;
+      .left {
+        width: 50%;
+      }
+      .right {
+        width: 50%;
+        div {
+          margin: 0 auto;
+        }
+      }
+      .drop-container {
+        border: 2px dashed #ccc;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        height: 200px;
+        width: 50%;
+      }
+
+      .uploaded-image {
+        max-width: 200px;
+        margin-top: 10px;
+      }
+    }
+    .additional-details{
+        display: flex;
+        div{
+            width: 50%;
+        }
+    }
+    .action-btns{
+        float: right;
+    }
+  }
+}
