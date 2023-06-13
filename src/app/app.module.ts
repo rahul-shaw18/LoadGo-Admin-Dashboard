@@ -22,6 +22,7 @@ import { EarningReportsComponent } from './Core/earning-reports/earning-reports.
 import { StatementComponent } from './Core/statement/statement.component';
 import { ReviewRatingComponent } from './Core/review-rating/review-rating.component';
 import { PagesComponent } from './Core/pages/pages.component';
+import { ChangePasswordComponent } from './Core/navbar/NavbarComponent/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { PagesComponent } from './Core/pages/pages.component';
     StatementComponent,
     ReviewRatingComponent,
     PagesComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
