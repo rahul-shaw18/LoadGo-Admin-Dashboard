@@ -1,15 +1,16 @@
 .container {
-  height: 90vh;
 
   .container {
+    overflow-y: scroll;
+    height: 75vh;
     .header-section {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 5px 0;
     }
-    hr{
-        margin: 0.5rem;
+    hr {
+      margin: 0.5rem;
     }
     .table {
       height: 85vh;

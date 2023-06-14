@@ -1,7 +1,7 @@
 .container {
-  overflow-y: scroll;
-  height: 80vh;
   .table {
+    overflow-y: scroll;
+    height: 75vh;
     .add-rider-btn {
       float: right;
       position: relative;

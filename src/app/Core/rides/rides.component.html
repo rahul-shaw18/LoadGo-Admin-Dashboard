@@ -1,9 +1,13 @@
 <div class="container">
     <h1>Rides</h1>
     <hr />
-    <div class="table">
-        <app-auto-complete class="auto-complete" [placeholder]="'Search...'" [providedOption]="ridesOptions[0].displayName" [options]="ridesOptions"
-            (selectedOptions)="onSelectedOption($event)" (inputValue)="onInputValue($event)"></app-auto-complete>
-        <app-table [tableData]="tableData" [displayedColumns]="displayedColumns" [tableToDisplay]="'Rides'"></app-table>
-    </div>
+    <section class="wrapper">
+        <div class="table">
+            <app-auto-complete class="auto-complete" [placeholder]="'Search...'"
+                [providedOption]="ridesOptions[0].displayName" [options]="ridesOptions"
+                (selectedOptions)="onSelectedOption($event)" (inputValue)="onInputValue($event)"></app-auto-complete>
+            <app-table [tableData]="tableData" [displayedColumns]="displayedColumns"
+                [tableToDisplay]="'Rides'"></app-table>
+        </div>
+    </section>
 </div>
