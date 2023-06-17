@@ -10,7 +10,7 @@
                 <div class="card-wrapper">
                     <div class="card" *ngFor="let card of item.card" [ngStyle]="{ background: card.cardColor }" [routerLink]="card.route" >
                         <div class="icon" [ngStyle]="{ background: card.cardIconBGcolor }">
-                            <i class="{{ card.cardIcon }}"></i>
+                            <i [ngStyle]="{ color: card.cardColor }" class="{{ card.cardIcon }}"></i>
                         </div>
                         <div class="content">
                             <div class="heading">{{ card.cardContentHeading }}</div>
