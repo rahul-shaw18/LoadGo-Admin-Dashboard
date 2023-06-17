@@ -41,21 +41,20 @@ body {
 }
 
 @font-face {
-  font-family: "loadgo";
-  src: url("./assets/fonts/loadgo.eot?kfjpyv");
-  src: url("./assets/fonts/loadgo.eot?kfjpyv#iefix") format("embedded-opentype"),
-    url("./assets/fonts/loadgo.ttf?kfjpyv") format("truetype"),
-    url("./assets/fonts/loadgo.woff?kfjpyv") format("woff"),
-    url("./assets/fonts/loadgo.svg?kfjpyv#loadgo") format("svg");
+  font-family: 'loadgo';
+  src:  url('./assets/fonts/loadgo.eot?1zltf6');
+  src:  url('./assets/fonts/loadgo.eot?1zltf6#iefix') format('embedded-opentype'),
+    url('./assets/fonts/loadgo.ttf?1zltf6') format('truetype'),
+    url('./assets/fonts/loadgo.woff?1zltf6') format('woff'),
+    url('./assets/fonts/loadgo.svg?1zltf6#loadgo') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "loadgo" !important;
+  font-family: 'loadgo' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -68,9 +67,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-money:before {
+.icon-steering-wheel:before {
   content: "\e900";
 }
+.icon-files-empty:before {
+  content: "\e925";
+}
+.icon-file-text2:before {
+  content: "\e926";
+}
+.icon-coin-dollar:before {
+  content: "\e93b";
+}
+.icon-star:before {
+  content: "\f005";
+}
+.icon-user:before {
+  content: "\f007";
+}
+.icon-truck:before {
+  content: "\f0d1";
+}
+.icon-money:before {
+  content: "\f0d6";
+}
+.icon-cab:before {
+  content: "\f1ba";
+}
+.icon-taxi:before {
+  content: "\f1ba";
+}
+
 
 html,
 body {

@@ -17,7 +17,7 @@ export const menuOptions = [
     id: 3,
     name: 'Drivers',
     route: 'drivers',
-    icon: 'fa-address-card',
+    icon: 'icon-steering-wheel',
     isSelected: false,
   },
   {
@@ -37,7 +37,7 @@ export const menuOptions = [
   {
     id: 6,
     name: 'Vehicle',
-    icon: '',
+    icon: 'icon-cab',
     route: 'vehicle',
     isSelected: false,
   },
@@ -59,7 +59,7 @@ export const menuOptions = [
     id: 9,
     name: 'Earning Reports',
     route: 'earning-reports',
-    icon: '',
+    icon: 'icon-money',
     isSelected: false,
   },
   // {
@@ -73,7 +73,7 @@ export const menuOptions = [
     id: 11,
     name: 'Reviews and Ratings',
     route: 'review-rating',
-    icon: '',
+    icon: 'icon-star',
     isSelected: false,
   },
   // {
@@ -94,7 +94,7 @@ export const menuOptions = [
     id: 14,
     name: 'Statement',
     route: 'statement',
-    icon: '',
+    icon: 'icon-file-text2',
     isSelected: false,
   },
   // {
@@ -122,7 +122,7 @@ export const menuOptions = [
     id: 18,
     name: 'Pages',
     route: 'pages',
-    icon: '',
+    icon: 'icon-files-empty',
     isSelected: false,
   },
 ];
