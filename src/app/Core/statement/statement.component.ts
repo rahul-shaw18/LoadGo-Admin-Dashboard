@@ -50,7 +50,7 @@ export class StatementComponent {
 
   cardArray = [
     {
-      cardIcon: '../../../assets/dashboard icon/person-circle.svg',
+      cardIcon: 'fa-car fa-solid',
       cardIconBGcolor: '#49978b',
       cardContentHeading: 'Total Rides',
       cardContentSubheading: '329',
@@ -58,7 +58,7 @@ export class StatementComponent {
       route: '/riders',
     },
     {
-      cardIcon: '../../../assets/dashboard icon/driver-dash.png',
+      cardIcon: 'fa-circle-xmark fa-solid',
       cardIconBGcolor: '#49978b',
       cardContentHeading: 'Cancelled Rides',
       cardContentSubheading: '500',
@@ -66,7 +66,7 @@ export class StatementComponent {
       route: '/drivers',
     },
     {
-      cardIcon: '../../../assets/dashboard icon/car.png',
+      cardIcon: 'fa-circle-check fa-solid',
       cardIconBGcolor: '#49978b',
       cardContentHeading: 'Complete Rides',
       cardContentSubheading: '4',
@@ -74,7 +74,7 @@ export class StatementComponent {
       route: '/vehicle',
     },
     {
-      cardIcon: '../../../assets/dashboard icon/money.png',
+      cardIcon: 'icon-money',
       cardIconBGcolor: '#49978b',
       cardContentHeading: 'Revenue',
       cardContentSubheading: '500',

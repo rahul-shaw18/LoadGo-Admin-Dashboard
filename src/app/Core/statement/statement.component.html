@@ -13,7 +13,7 @@
                 <div class="card-wrapper">
                     <div class="card" *ngFor="let card of cardArray" [ngStyle]="{ background: card.cardColor }">
                         <div class="icon" [ngStyle]="{ background: card.cardIconBGcolor }">
-                            <img src="{{ card.cardIcon }}" />
+                            <i class="{{ card.cardIcon }}" ></i>
                         </div>
                         <div class="content">
                             <div class="heading">{{ card.cardContentHeading }}</div>
