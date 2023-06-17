@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
       groupName: 'Site Statistics',
       card: [
         {
-          cardIcon: '../../../assets/dashboard icon/person-circle.svg',
+          cardIcon: 'fa-solid fa-user',
           cardIconBGcolor: '#49978b',
           cardContentHeading: 'Total Riders',
           cardContentSubheading: '329',
@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
           route: '/riders',
         },
         {
-          cardIcon: '../../../assets/dashboard icon/driver-dash.png',
+          cardIcon: 'icon-steering-wheel',
           cardIconBGcolor: '#49978b',
           cardContentHeading: 'Total Drivers',
           cardContentSubheading: '500',
@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
           route: '/drivers',
         },
         {
-          cardIcon: '../../../assets/dashboard icon/car.png',
+          cardIcon: 'icon-cab',
           cardIconBGcolor: '#49978b',
           cardContentHeading: 'Vehicle',
           cardContentSubheading: '4',
@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
           route: '/vehicle',
         },
         {
-          cardIcon: '../../../assets/dashboard icon/money.png',
+          cardIcon: 'icon-money',
           cardIconBGcolor: '#49978b',
           cardContentHeading: 'Revenue',
           cardContentSubheading: '500',
@@ -54,7 +54,7 @@ export class DashboardComponent implements OnInit {
       groupName: 'Ride Statistics',
       card: [
         {
-          cardIcon: '../../../assets/dashboard icon/driver-dash.png',
+          cardIcon: 'fa-car fa-solid',
           cardIconBGcolor: '#49978b',
           cardContentHeading: 'Total Ride',
           cardContentSubheading: '821',
@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
           route: '/rides',
         },
         {
-          cardIcon: '../../../assets/dashboard icon/car.png',
+          cardIcon: 'fa-solid fa-circle-xmark',
           cardIconBGcolor: '#49978b',
           cardContentHeading: 'Cancel Ride',
           cardContentSubheading: '104',
@@ -70,7 +70,7 @@ export class DashboardComponent implements OnInit {
           route: '/rides',
         },
         {
-          cardIcon: '../../../assets/dashboard icon/money.png',
+          cardIcon: 'fa-sharp fa-solid fa-person-biking',
           cardIconBGcolor: '#49978b',
           cardContentHeading: 'Running Ride',
           cardContentSubheading: '500',
@@ -78,7 +78,7 @@ export class DashboardComponent implements OnInit {
           route: '/rides',
         },
         {
-          cardIcon: '../../../assets/dashboard icon/person-circle.svg',
+          cardIcon: 'fa-solid fa-circle-check',
           cardIconBGcolor: '#49978b',
           cardContentHeading: 'Completed',
           cardContentSubheading: '329',
