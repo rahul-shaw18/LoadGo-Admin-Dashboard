@@ -17,8 +17,6 @@ export class ProfileComponent {
       password: ['', [Validators.required]],
       contact: ['', Validators.required],
       gender: ['', Validators.required],
-      country: ['', Validators.required],
-      city: ['', Validators.required],
       profileImage: [null, Validators.required],
     });
   }
