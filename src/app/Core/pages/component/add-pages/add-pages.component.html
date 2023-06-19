@@ -1,4 +1,24 @@
 <div class="container">
     <h1>Add Pages</h1>
     <hr />
+    <section class="form">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="page-name" class="form-label">Page/Section Name</label>
+                <input type="text" class="form-control" formControlName="pageName" id="page-name">
+            </div>
+            <div class="mb-3">
+                <label for="page-title" class="form-label">Page Title</label>
+                <input type="text" class="form-control" formControlName="pageTitle" id="page-title">
+            </div>
+            <div class="mb-3">
+                <label for="page-description" class="form-label">Page Description</label>
+                <textarea class="form-control" formControlName="pageDescription" id="page-description" rows="3"></textarea>
+            </div>
+            <div class="action-btns mt30 mb30">
+                <button class="mr10" mat-flat-button color="primary" type="submit" [disabled]="myForm.invalid">Add Page</button>
+                <button class="mr10" mat-flat-button color="primary" (click)="onReset()">Reset</button>
+            </div>
+        </form>
+    </section>
 </div>

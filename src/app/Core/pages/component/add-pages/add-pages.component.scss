@@ -1,4 +1,15 @@
 .container {
-    height: 80vh;
-    width: 100vh;
+  padding: 5%;
+  height: 85vh;
+  width: 80vw;
+  .form {
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+    label {
+      width: 25%;
+    }
+    .action-btns {
+      float: right;
+    }
+  }
 }
