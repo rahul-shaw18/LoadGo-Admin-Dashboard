@@ -2,7 +2,7 @@
     <h1>Vehicle</h1>
     <hr />
     <section class="table">
-        <button class="add-rider-btn" mat-flat-button color="primary">Add Vehicle</button>
+        <button class="add-rider-btn" mat-flat-button color="primary" (click)="addVehicle()">Add Vehicle</button>
         <app-table [tableData]="tableData" [displayedColumns]="displayedColumns" [tableToDisplay]="'Rider'"></app-table>
     </section>
 </div>

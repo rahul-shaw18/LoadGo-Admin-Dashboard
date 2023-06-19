@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { DialogService } from 'src/app/Shared/services/dialog.service';
 import { TableService } from 'src/app/Shared/services/table.service';
+import { AddDriverComponent } from './component/add-driver/add-driver.component';
 
 @Component({
   selector: 'app-drivers',
@@ -26,7 +28,10 @@ export class DriversComponent {
     },
   ];
 
-  constructor(private tableService: TableService) {}
+  constructor(
+    private tableService: TableService,
+    private dialogService: DialogService
+  ) {}
 
   ngOnInit() {
     this.tableData = this.tableService.getTableData();
@@ -49,5 +54,8 @@ export class DriversComponent {
 
   onInputValue(e: any) {
     console.log(e);
+  }
+  addDriver() {
+    this.dialogService.openDialog(AddDriverComponent);
   }
 }

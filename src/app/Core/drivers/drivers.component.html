@@ -6,7 +6,7 @@
             <app-auto-complete [placeholder]="'Search...'"
                 [providedOption]="driversOptions[0].displayName" [options]="driversOptions"
                 (selectedOptions)="onSelectedOption($event)" (inputValue)="onInputValue($event)"></app-auto-complete>
-            <button class="add-rider-btn" mat-flat-button color="primary">Add Driver</button>
+            <button class="add-rider-btn" mat-flat-button color="primary" (click)="addDriver()">Add Driver</button>
         </div>
         <hr />
         <div class="table">

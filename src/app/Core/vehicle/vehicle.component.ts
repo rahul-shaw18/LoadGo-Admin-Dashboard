@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { DialogService } from 'src/app/Shared/services/dialog.service';
 import { TableService } from 'src/app/Shared/services/table.service';
+import { AddVehicleComponent } from './component/add-vehicle/add-vehicle.component';
 
 @Component({
   selector: 'app-vehicle',
@@ -9,7 +11,10 @@ import { TableService } from 'src/app/Shared/services/table.service';
 export class VehicleComponent {
   tableData: any;
 
-  constructor(private tableService: TableService) {}
+  constructor(
+    private tableService: TableService,
+    private dialogService: DialogService
+  ) {}
 
   ngOnInit() {
     this.tableData = this.tableService.getTableData();
@@ -25,4 +30,8 @@ export class VehicleComponent {
     'rideFare',
     'status',
   ];
+
+  addVehicle() {
+    this.dialogService.openDialog(AddVehicleComponent);
+  }
 }

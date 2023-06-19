@@ -23,6 +23,10 @@ import { StatementComponent } from './Core/statement/statement.component';
 import { ReviewRatingComponent } from './Core/review-rating/review-rating.component';
 import { PagesComponent } from './Core/pages/pages.component';
 import { ChangePasswordComponent } from './Core/navbar/NavbarComponent/change-password/change-password.component';
+import { AddRiderComponent } from './Core/riders/component/add-rider/add-rider.component';
+import { AddDriverComponent } from './Core/drivers/component/add-driver/add-driver.component';
+import { AddVehicleComponent } from './Core/vehicle/component/add-vehicle/add-vehicle.component';
+import { AddPagesComponent } from './Core/pages/component/add-pages/add-pages.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,10 @@ import { ChangePasswordComponent } from './Core/navbar/NavbarComponent/change-pa
     ReviewRatingComponent,
     PagesComponent,
     ChangePasswordComponent,
+    AddRiderComponent,
+    AddDriverComponent,
+    AddVehicleComponent,
+    AddPagesComponent,
   ],
   imports: [
     BrowserModule,
