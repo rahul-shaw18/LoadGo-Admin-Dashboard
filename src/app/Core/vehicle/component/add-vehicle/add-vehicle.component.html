@@ -1,4 +1,56 @@
 <div class="container">
     <h1>Add Vehicle</h1>
     <hr />
+    <section class="form">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <section class="details-container">
+                <div class="left">
+                    <div>
+                        <label for="name" class="col-sm-1 col-form-label">Vehicle Type Name:</label>
+                        <input class="form-control" type="text" id="name" formControlName="riderName" required>
+                    </div>
+
+                    <div>
+                        <label for="email" class="col-sm-1 col-form-label">Cost Per KM:</label>
+                        <input type="email" class="form-control" id="email" formControlName="email" required>
+                    </div>
+
+                    <div>
+                        <label for="email" class="col-sm-1 col-form-label">Status:</label>
+                        <app-auto-complete [placeholder]="'Search...'" [providedOption]="statusOptions[0].displayName"
+                            [options]="statusOptions" (selectedOptions)="onSelectedOption($event)"
+                            (inputValue)="onInputValue($event)"></app-auto-complete>
+                    </div>
+
+                </div>
+                <div class="right">
+                    <div class="profile">
+                        <!-- <label for="profileImage">Profile Image:</label> -->
+                        <div *ngIf="!profileImage" class="drop-container" (dragover)="onDragOver($event)"
+                            (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
+                            <p>Drag and drop an image here, or click to select</p>
+                            <input class="w100p" type="file" id="profileImage" accept="image/*"
+                                (change)="onFileSelected($event)">
+                        </div>
+                        <div *ngIf="profileImage" class="uploaded-image">
+                            <img [src]="profileImage" alt="Profile Image">
+
+                            <div class="overlay">
+                                <button type="button" class="btn btn-light" (click)="profileImage=''">remove</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="action-btns mt20">
+                        <button class="mr10" mat-flat-button color="primary" type="submit"
+                            [disabled]="myForm.invalid">Submit</button>
+                        <button class="ml10" mat-stroked-button>Reset</button>
+                    </div>
+
+                </div>
+            </section>
+        </form>
+    </section>
 </div>
