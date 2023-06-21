@@ -12,7 +12,7 @@
       display: flex;
       .left {
         width: 50%;
-        padding-right:8%;
+        padding-right: 8%;
         padding-left: 2%;
       }
       .right {
@@ -22,7 +22,7 @@
         flex-direction: column;
         gap: 27px;
         .profile {
-        //   flex-grow: 1;
+          //   flex-grow: 1;
           margin: 0 auto;
           max-width: 230px;
           height: 200px;
@@ -68,8 +68,8 @@
           }
         }
         .action-btns {
-        margin: 0 0 0 auto;
-      }
+          margin: 0 0 0 auto;
+        }
       }
     }
   }

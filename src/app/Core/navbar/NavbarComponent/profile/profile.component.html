@@ -25,7 +25,8 @@
                         <div *ngIf="!profileImage" class="drop-container" (dragover)="onDragOver($event)"
                             (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
                             <p>Drag and drop an image here, or click to select</p>
-                            <input class="w100p" type="file" id="profileImage" accept="image/*" (change)="onFileSelected($event)">
+                            <input class="w100p" type="file" id="profileImage" accept="image/*"
+                                (change)="onFileSelected($event)">
                         </div>
                         <div *ngIf="profileImage" class="uploaded-image">
                             <img [src]="profileImage" alt="Profile Image">
