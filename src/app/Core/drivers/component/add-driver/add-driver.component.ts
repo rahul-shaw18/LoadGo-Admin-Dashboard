@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -10,10 +10,10 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class AddDriverComponent {
   myForm!: FormGroup;
   profileImage: any;
-  formBuilder: any;
   constructor(
     public dialogRef: MatDialogRef<AddDriverComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit() {

@@ -1,117 +1,120 @@
 <div class="container">
     <h1>Add Driver</h1>
     <hr />
-    <div class="form-wrapper">
-        <form class="form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
-            <section class="details-container">
-                <div class="left">
-                    <div>
-                        <label for="name" class="col-sm-1 col-form-label">Driver Name:</label>
-                        <input class="form-control" type="text" id="name" formControlName="driverName" required>
-                    </div>
-
-                    <div>
-                        <label for="email" class="col-sm-1 col-form-label">Email:</label>
-                        <input type="email" class="form-control" id="email" formControlName="email" required>
-                    </div>
-                    <div>
-                        <label for="password" class="col-sm-1 col-form-label">Password:</label>
-                        <input type="password" class="form-control" id="password" formControlName="password" required>
-                    </div>
-                    <div>
-                        <label for="password" class="col-sm-1 col-form-label">Confirm Password:</label>
-                        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" required>
-                    </div>
-
-                    <div>
-                        <label for="accountHolderName" class="col-sm-1 col-form-label">Account Holder Name:</label>
-                        <input class="form-control" type="text" id="accountHolderName"
-                            formControlName="accountHolderName" required>
-                    </div>
-
-                    <div>
-                        <label for="accountNumber" class="col-sm-1 col-form-label">Account Number:</label>
-                        <input class="form-control" type="text" id="accountNumber" formControlName="accountNumber"
-                            required>
-                    </div>
-
-                    <div>
-                        <label for="bankName" class="col-sm-1 col-form-label">Bank Name:</label>
-                        <input class="form-control" type="text" id="bankName" formControlName="bankName" required>
-                    </div>
-
-                    <div>
-                        <label for="bankLocation" class="col-sm-1 col-form-label">Bank Location:</label>
-                        <input class="form-control" type="text" id="bankLocation" formControlName="bankLocation"
-                            required>
-                    </div>
-
-                    <div>
-                        <label for="swiftCode" class="col-sm-1 col-form-label">SWIFT Code:</label>
-                        <input class="form-control" type="text" id="swiftCode" formControlName="swiftCode" required>
-                    </div>
-
-
-
-                </div>
-                <div class="right">
-                    <div class="profile">
-                        <!-- <label for="profileImage">Profile Image:</label> -->
-                        <div *ngIf="!profileImage" class="drop-container" (dragover)="onDragOver($event)"
-                            (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
-                            <p>Drag and drop an image here, or click to select</p>
-                            <input class="w100p" type="file" id="profileImage" accept="image/*"
-                                (change)="onFileSelected($event)">
+        <section class="form">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <section class="details-container">
+                    <div class="left">
+                        <div>
+                            <label for="name" class="col-sm-1 col-form-label">Driver Name:</label>
+                            <input class="form-control" type="text" id="name" formControlName="driverName" required>
                         </div>
-                        <div *ngIf="profileImage" class="uploaded-image">
-                            <img [src]="profileImage" alt="Profile Image">
 
-                            <div class="overlay">
-                                <button type="button" class="btn btn-light" (click)="profileImage=''">remove</button>
+        
+                        <div>
+                            <label for="email" class="col-sm-1 col-form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" formControlName="email" required>
+                        </div>
+
+                        <div>
+                            <label for="password" class="col-sm-1 col-form-label">Password:</label>
+                            <input type="password" class="form-control" id="password" formControlName="password" required>
+                        </div>
+                        <div>
+                            <label for="password" class="col-sm-1 col-form-label">Confirm Password:</label>
+                            <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" required>
+                        </div>
+
+        
+                        <div>
+                            <label for="accountHolderName" class="col-sm-1 col-form-label">Account Holder Name:</label>
+                            <input class="form-control" type="text" id="accountHolderName" formControlName="accountHolderName" required>
+                        </div>
+                        
+                        <div>
+                            <label for="accountNumber" class="col-sm-1 col-form-label">Account Number:</label>
+                            <input class="form-control" type="text" id="accountNumber" formControlName="accountNumber" required>
+                        </div>
+                        <div>
+                            <label for="bankName" class="col-sm-1 col-form-label">Bank Name:</label>
+                            <input class="form-control" type="text" id="bankName" formControlName="bankName" required>
+                        </div>
+                        
+                        <div>
+                            <label for="bankLocation" class="col-sm-1 col-form-label">Bank Location:</label>
+                            <input class="form-control" type="text" id="bankLocation" formControlName="bankLocation" required>
+                        </div>
+                        
+                        <div>
+                            <label for="swiftCode" class="col-sm-1 col-form-label">SWIFT Code:</label>
+                            <input class="form-control" type="text" id="swiftCode" formControlName="swiftCode" required>
+                        </div>
+
+
+        
+        
+        
+                    </div>
+                    <div class="right">
+                        <div class="profile">
+                            <!-- <label for="profileImage">Profile Image:</label> -->
+                            <div *ngIf="!profileImage" class="drop-container" (dragover)="onDragOver($event)"
+                                (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
+                                <p>Drag and drop an image here, or click to select</p>
+                                <input class="w100p" style="height:27px" type="file" id="profileImage" accept="image/*"
+                                    (change)="onFileSelected($event)">
+                            </div>
+                            <div *ngIf="profileImage" class="uploaded-image">
+                                <img [src]="profileImage" alt="Profile Image">
+        
+                                <div class="overlay">
+                                    <button type="button" class="btn btn-light" (click)="profileImage=''">remove</button>
+                                </div>
+                            </div>
+        
+                        </div>
+        
+                        <div>
+                            <label for="contact" class="col-sm-1 col-form-label">Contact Number:</label>
+                            <input type="number" class="form-control" id="contact" formControlName="contact" required>
+                        </div>
+
+                        <div>
+                            <label for="vehicleType" class="col-sm-1 col-form-label">Vehicle Type: </label>
+                            <div class="mt10 mb10">
+                                <label class="form-check-label mr10" for="sedan">Sedan </label>
+                                <input type="radio" class="mr30 form-check-input" formControlName="vehicleType" name="vehicleType" id="sedan"
+                                    value="sedan">
+                                <label class="form-check-label mr10" for="suv">SUV </label>
+                                <input type="radio" class="mr30 form-check-input" formControlName="vehicleType" name="vehicleType" id="suv"
+                                    value="suv">
+                                <label class="form-check-label mr10" for="luxary">Luxary</label>
+                                <input type="radio" class="mr30 form-check-input" formControlName="vehicleType" name="vehicleType" id="luxary"
+                                    value="luxary">
                             </div>
                         </div>
 
-                    </div>
-
-                    <div>
-                        <label for="contact" class="col-sm-1 col-form-label">Contact Number:</label>
-                        <input type="number" class="form-control" id="contact" formControlName="contact" required>
-                    </div>
-
-                    <div>
-                        <label for="vehicleType" class="col-sm-1 col-form-label">Vehicle Type: </label>
-                        <div class="mt10 mb10">
-                            <label class="form-check-label w12p" for="sedan">Sedan </label>
-                            <input type="radio" class="mr30 form-check-input" formControlName="vehicleType"
-                                name="vehicleType" id="sedan" value="sedan">
-                            <label class="form-check-label w12p" for="suv">SUV </label>
-                            <input type="radio" class="mr30 form-check-input" formControlName="vehicleType"
-                                name="vehicleType" id="suv" value="suv">
-                            <label class="form-check-label w12p" for="luxary">Luxary</label>
-                            <input type="radio" class="mr30 form-check-input" formControlName="vehicleType"
-                                name="vehicleType" id="luxary" value="luxary">
+                        <div>
+                            <label for="address" class="col-sm-1 col-form-label">Address</label>
+                            <textarea class="form-control" id="address" rows="3" formControlName="address"></textarea>
                         </div>
-                    </div>
+                        
+                        <div>
+                            <label for="paymentEmail" class="col-sm-1 col-form-label">Payment Email:</label>
+                            <input class="form-control" type="email" id="paymentEmail" formControlName="paymentEmail" required>
+                        </div>
 
-                    <div>
-                        <label for="address" class="col-sm-1 col-form-label">Address</label>
-                        <textarea class="form-control" id="address" rows="3" formControlName="address"></textarea>
-                    </div>
 
-                    <div>
-                        <label for="paymentEmail" class="col-sm-1 col-form-label">Payment Email:</label>
-                        <input class="form-control" type="email" id="paymentEmail" formControlName="paymentEmail"
-                            required>
-                    </div>
 
-                    <div class="action-btns mt20">
-                        <button class="mr10" mat-flat-button color="primary" type="submit"
-                            [disabled]="myForm.invalid">Submit</button>
-                        <button class="ml10" mat-stroked-button>Reset</button>
-                    </div>
+        
+                        <div class="action-btns mt20">
+                            <button class="mr10" mat-flat-button color="primary" type="submit" [disabled]="myForm.invalid">Submit</button>
+                            <button class="ml10" mat-stroked-button>Reset</button>
+                        </div>
 
-                </div>
-            </section>
-        </form>
-    </div>
+        
+                    </div>
+                </section>
+            </form>
+        </section>
 </div>
