@@ -15,14 +15,14 @@ import { PagesComponent } from './Core/pages/pages.component';
 import { ChangePasswordComponent } from './Core/navbar/NavbarComponent/change-password/change-password.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/admin/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
 
   // authentication component
   { path: 'authentication', component: AuthenticationComponent },
 
   // sideNavBar Component
-  { path: 'admin/dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'riders', component: RidersComponent },
   { path: 'rides', component: RidesComponent },
   { path: 'drivers', component: DriversComponent },
