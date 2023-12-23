@@ -183,3 +183,59 @@
     </table>
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons=""></mat-paginator>
 </section>
+
+<section *ngIf="tableToDisplay=='Drivers'">
+    <div class="filter-section">
+        <input placeholder="Filter" (keyup)="onFilter($event)" />
+    </div>
+
+    <table mat-table matSort [dataSource]="dataSource" class="table">
+        <!-- Ride Id. Column -->
+        <ng-container matColumnDef="driverId">
+            <th mat-header-cell mat-sort-header="" *matHeaderCellDef>Driver ID.</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+
+
+
+        <!-- Driver Name Column -->
+        <ng-container matColumnDef="driverName">
+            <th mat-header-cell mat-sort-header="" *matHeaderCellDef> Driver Name </th>
+            <td mat-cell *matCellDef="let element">{{ element.driverName }}</td>
+        </ng-container>
+
+       
+
+        <!-- vehicle Number Column -->
+        <ng-container matColumnDef="vehicleNumber">
+            <th mat-header-cell mat-sort-header="" *matHeaderCellDef> Vehicle Number </th>
+            <td mat-cell *matCellDef="let element">{{ element.vehicleNo }}</td>
+        </ng-container>
+
+        <!-- vehicle Type Column -->
+        <ng-container matColumnDef="vehicleType">
+            <th mat-header-cell mat-sort-header="" *matHeaderCellDef> Vehicle Type </th>
+            <td mat-cell *matCellDef="let element">{{ element.vehicleType }}</td>
+        </ng-container>
+
+        <!-- vehicle Type Column -->
+        <ng-container matColumnDef="isActive">
+            <th mat-header-cell mat-sort-header="" *matHeaderCellDef> Active </th>
+            <td mat-cell *matCellDef="let element">{{ element.isActive ? 'Active':'Inactive' }}</td>
+        </ng-container>
+
+        
+
+        <!-- Status Column -->
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-stroked-button color="primary" (click)="onClicked(element)">{{element.isVerified}}</button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)="onRowClicked(row)" *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator *ngIf="dataSource" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons=""></mat-paginator>
+</section>

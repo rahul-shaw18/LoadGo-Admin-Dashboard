@@ -1,4 +1,12 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  ViewChild,
+} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -9,7 +17,7 @@ import { filter } from './../../Shared/interface/filter-interface';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })
-export class TableComponent implements OnInit, AfterViewInit {
+export class TableComponent implements OnChanges, OnInit, AfterViewInit {
   @Input() tableData: any;
   @Input() displayedColumns: any;
   @Input() tableToDisplay!: any;
@@ -19,14 +27,18 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
-  ngOnInit() {
-    this.dataSource = new MatTableDataSource(this.tableData);
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes['tableData'].currentValue);
+    if (changes['tableData'].currentValue) {
+      this.dataSource = new MatTableDataSource(this.tableData || []);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    }
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
+  ngOnInit() {}
+
+  ngAfterViewInit() {}
 
   onFilter(e: any) {
     const filterValue = (e.target as HTMLInputElement).value;
@@ -39,6 +51,5 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   onClicked(element: any) {
     console.log(element);
-    
   }
 }

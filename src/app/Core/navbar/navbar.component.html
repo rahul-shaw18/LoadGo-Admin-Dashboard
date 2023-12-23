@@ -1,6 +1,6 @@
 <nav class="nav navbar navbar-expand-lg bg-primary p10">
     <div class="container-fluid">
-        <a class="navbar-brand" routerLink="/home">
+        <a class="navbar-brand" (click)="handleClick('/dashboard')" routerLink="/">
             <img src="../../../assets/admin panel img/van1.png" alt="Logo" width="40" height="24"
                 class="d-inline-block align-text-top">
             <span class="ml15" style="color:#fff">LoadGo Admin Panel</span>
@@ -12,14 +12,14 @@
                     class="ml10">Admin</span>
             </div>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
-                <li><a class="dropdown-item" routerLink="/profile"><i class="fa-solid fa-address-card"></i><span
+                <li><a class="dropdown-item" (click)="handleClick('/profile')" routerLink="/profile"><i class="fa-solid fa-address-card"></i><span
                             class="ml15">Profile</span></a></li>
-                <li><a class="dropdown-item" routerLink="/change-password"><i class="fa-solid fa-gear"></i><span class="ml15">Change
+                <li><a class="dropdown-item" routerLink="/change-password" (click)="handleClick('/change-password')"><i class="fa-solid fa-gear"></i><span class="ml15">Change
                             Password</span></a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" routerLink="/logout"><i class="fa-solid fa-right-from-bracket"></i><span
+                <li><a class="dropdown-item" routerLink="/logout" (click)="handleClick('/logout')"><i class="fa-solid fa-right-from-bracket"></i><span
                             class="ml15">Logout</span></a></li>
             </ul>
         </div>

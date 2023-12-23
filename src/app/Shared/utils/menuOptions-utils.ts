@@ -208,3 +208,21 @@ export const dashboardCards = [
   },
 ];
 
+export const driverOptions = [
+  {
+    id: 0,
+    displayName: 'All drivers',
+    value: 'all',
+  },
+  {
+    id: 1,
+    displayName: 'Approved Drivers',
+    value: 'approved_driver',
+  },
+  {
+    id: 2,
+    displayName: 'Unapproved Drivers',
+    value: 'schedule',
+  },
+];
+

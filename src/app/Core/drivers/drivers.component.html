@@ -10,8 +10,8 @@
         </div>
         <hr />
         <div class="table">
-            <app-table [tableData]="tableData" [displayedColumns]="displayedColumns"
-                [tableToDisplay]="'Rides'"></app-table>
+            <app-table [tableData]="tableData$ | async" [displayedColumns]="displayedColumns"
+                [tableToDisplay]="'Drivers'"></app-table>
         </div>
     </div>
 

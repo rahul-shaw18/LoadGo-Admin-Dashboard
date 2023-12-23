@@ -1,7 +1,10 @@
+import { ApiService } from './../../Shared/services/api.service';
 import { Component } from '@angular/core';
 import { DialogService } from 'src/app/Shared/services/dialog.service';
 import { TableService } from 'src/app/Shared/services/table.service';
 import { AddDriverComponent } from './component/add-driver/add-driver.component';
+import { driverOptions } from 'src/app/Shared/utils/menuOptions-utils';
+import { Observable, catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-drivers',
@@ -9,42 +12,32 @@ import { AddDriverComponent } from './component/add-driver/add-driver.component'
   styleUrls: ['./drivers.component.scss'],
 })
 export class DriversComponent {
-  tableData: any;
-  driversOptions = [
-    {
-      id: 0,
-      displayName: 'All drivers',
-      value: 'all',
-    },
-    {
-      id: 1,
-      displayName: 'Approved Drivers',
-      value: 'approved_driver',
-    },
-    {
-      id: 2,
-      displayName: 'Unapproved Drivers',
-      value: 'schedule',
-    },
-  ];
+  tableData$!: Observable<any>;
+  driversOptions = driverOptions;
 
   constructor(
     private tableService: TableService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private apiService: ApiService
   ) {}
 
   ngOnInit() {
-    this.tableData = this.tableService.getTableData();
+    this.tableData$ = this.apiService.getDriver().pipe(
+      catchError((error) => {
+        console.log(error);
+        return of([]);
+      })
+    );
   }
 
   // table
   displayedColumns: string[] = [
-    'rideId',
-    'riderName',
+    'driverId',
+
     'driverName',
-    'pickDropAddress',
-    'date',
-    'rideFare',
+    'vehicleNumber',
+    'vehicleType',
+    'isActive',
     'status',
   ];
 
