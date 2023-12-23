@@ -16,25 +16,31 @@ import { ChangePasswordComponent } from './Core/navbar/NavbarComponent/change-pa
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
 
   // authentication component
   { path: 'authentication', component: AuthenticationComponent },
 
-  // sideNavBar Component
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'riders', component: RidersComponent },
-  { path: 'rides', component: RidesComponent },
-  { path: 'drivers', component: DriversComponent },
-  { path: 'vehicle', component: VehicleComponent },
-  { path: 'earning-reports', component: EarningReportsComponent },
-  { path: 'statement', component: StatementComponent },
-  { path: 'review-rating', component: ReviewRatingComponent },
-  { path: 'pages', component: PagesComponent },
+  {
+    path: '',
+    component: HomeComponent,
 
-  // navbar component
-  { path: 'profile', component: ProfileComponent },
-  { path: 'change-password',component:ChangePasswordComponent },
+    children: [
+      // sideNavBar Component
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'riders', component: RidersComponent },
+      { path: 'rides', component: RidesComponent },
+      { path: 'drivers', component: DriversComponent },
+      { path: 'vehicle', component: VehicleComponent },
+      { path: 'earning-reports', component: EarningReportsComponent },
+      { path: 'statement', component: StatementComponent },
+      { path: 'review-rating', component: ReviewRatingComponent },
+      { path: 'pages', component: PagesComponent },
+      
+      // navbar component
+      { path: 'profile', component: ProfileComponent },
+      { path: 'change-password', component: ChangePasswordComponent },
+    ],
+  },
 ];
 
 @NgModule({

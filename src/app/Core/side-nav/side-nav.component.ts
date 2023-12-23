@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { menuOptions } from 'src/app/Shared/utils/menuOptions-utils';
 
@@ -11,23 +11,17 @@ export class SideNavComponent implements OnInit {
   menuOptions = menuOptions;
   filterMenuOptions: any = [];
 
-
   constructor(private router: Router) {}
   ngOnInit() {
+    let url = this.router.url.slice(1)
+    this.filterMenuOptions = menuOptions.map(menu => {
+      return {...menu, isSelected:menu.route.includes(url)}
+    })
 
-    this.filterMenuOptions = menuOptions;
   }
 
   onMenuItemSelected(menuOption: any) {
-    for (let item of menuOptions) {
-      if (menuOption.id == item.id) {
-        item.isSelected = true;
-
-      } else {
-        item.isSelected = false;
-      }
-    }
-    console.log(menuOption);
+    this.filterMenuOptions.forEach((menu:any) => menu.id == menuOption.id ? menu.isSelected = true : menu.isSelected = false);
   }
 
   onSelectedOption(e: any) {
