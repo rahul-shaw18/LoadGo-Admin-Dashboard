@@ -5,6 +5,7 @@ import { AddDriverComponent } from './component/add-driver/add-driver.component'
 import { driverOptions } from 'src/app/Shared/utils/menuOptions-utils';
 import { Observable, catchError, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
+import { DocumentsComponent } from './component/documents/documents.component';
 
 @Component({
   selector: 'app-drivers',
@@ -52,6 +53,7 @@ export class DriversComponent {
   addDriver() {
     const dialogRef = this.dialog.open(AddDriverComponent, {
       data: {},
+  
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -59,10 +61,10 @@ export class DriversComponent {
     });
   }
 
-  handleSelectedDriver(e:Object) {
+  handleSelectedDriver(e:any) {
     console.log(e)
 
-    const dialogRef = this.dialog.open(AddDriverComponent, {
+    const dialogRef = this.dialog.open(e?.selectedOption == 'view-documents' ? DocumentsComponent:AddDriverComponent, {
       data: e,
     });
 

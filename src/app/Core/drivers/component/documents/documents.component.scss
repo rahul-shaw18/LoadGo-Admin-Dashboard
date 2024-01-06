@@ -1,0 +1,27 @@
+.container {
+    padding: 3%;
+    height: 94vh;
+    width: 80vw;
+
+    .document{
+        overflow: auto;
+        height: 65vh;
+
+        .details{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            img{
+                width: 350px;
+                height: 200px;
+            }
+        }
+    }
+
+    .action-btn{
+        padding: 20px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+}

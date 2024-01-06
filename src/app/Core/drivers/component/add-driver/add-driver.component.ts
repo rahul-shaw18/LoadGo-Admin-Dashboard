@@ -10,6 +10,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class AddDriverComponent {
   myForm!: FormGroup;
   profileImage: any;
+  isEditable:boolean = true
   constructor(
     public dialogRef: MatDialogRef<AddDriverComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -20,22 +21,23 @@ export class AddDriverComponent {
   ngOnInit() {
    let { element } = this.data
 
-    this.myForm = this.formBuilder.group({
-      driverName: [element?.driverName?element?.driverName:'', Validators.required],
-      email: [element?.email?element?.email:'', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
-      confirmPassword: ['', [Validators.required]],
-      accountHolderName: [element?.accountHolderName?element?.accountHolderName:'', [Validators.required]],
-      accountNumber: [element?.accountNumber?element?.accountNumber:'', [Validators.required]],
-      bankName: [element?.bankName?element?.bankName:'', [Validators.required]],
-      bankLocation: [element?.bankLocation?element?.bankLocation:'', [Validators.required]],
-      swiftCode: [element?.swiftCode?element?.swiftCode:'', [Validators.required]],
-      address: [element?.address?element?.address:'', [Validators.required]],
-      paymentEmail: [element?.email?element?.email:'', [Validators.required]],
-      contact: [element?.phone?element?.phone:'', Validators.required],
-      vehicleType: [element?.email?element?.email:'', Validators.required],
-      profileImage: [element?.email?element?.email:null, Validators.required],
-    });
+   this.myForm = this.formBuilder.group({
+    driverName: [{ value: element?.driverName ? element?.driverName : '', disabled: this.isEditable }, Validators.required],
+    email: [{ value: element?.email ? element?.email : '', disabled: this.isEditable }, [Validators.required, Validators.email]],
+    password: [{ value: '', disabled: this.isEditable }, [Validators.required]],
+    confirmPassword: [{ value: '', disabled: this.isEditable }, [Validators.required]],
+    accountHolderName: [{ value: element?.accountHolderName ? element?.accountHolderName : '', disabled: this.isEditable }, [Validators.required]],
+    accountNumber: [{ value: element?.accountNumber ? element?.accountNumber : '', disabled: this.isEditable }, [Validators.required]],
+    bankName: [{ value: element?.bankName ? element?.bankName : '', disabled: this.isEditable }, [Validators.required]],
+    bankLocation: [{ value: element?.bankLocation ? element?.bankLocation : '', disabled: this.isEditable }, [Validators.required]],
+    swiftCode: [{ value: element?.swiftCode ? element?.swiftCode : '', disabled: this.isEditable }, [Validators.required]],
+    address: [{ value: element?.address ? element?.address : '', disabled: this.isEditable }, [Validators.required]],
+    paymentEmail: [{ value: element?.email ? element?.email : '', disabled: this.isEditable }, [Validators.required]],
+    contact: [{ value: element?.phone ? element?.phone : '', disabled: this.isEditable }, Validators.required],
+    vehicleType: [{ value: element?.email ? element?.email : '', disabled: this.isEditable }, Validators.required],
+    profileImage: [{ value: element?.email ? element?.email : null, disabled: this.isEditable }, Validators.required],
+  });
+  
   }
 
   get gf() {
@@ -77,5 +79,14 @@ export class AddDriverComponent {
     reader.readAsDataURL(file);
   }
 
-  onReset() {}
+  onReset() { }
+  
+  onClicked() {
+    if (this.isEditable) {
+      this.myForm.enable();
+    } else {
+      this.myForm.disable();
+    }
+    this.isEditable = !this.isEditable;
+  }
 }

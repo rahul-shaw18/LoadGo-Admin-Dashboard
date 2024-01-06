@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Documents</h1>
+  <hr />
+  <section class="document">
+    <div class="details">
+      <h3>Aadhar Card</h3>
+      <div class="space-around">
+        <img [src]="data.element.aadharFront" alt="aadhar front" srcset="" />
+        <img [src]="data.element.aadharBack" alt="aadhar back" srcset="" />
+      </div>
+    </div>
+    <div class="details">
+      <h3>Driving Licence</h3>
+      <div class="space-around">
+        <img [src]="data.element.dlFront" alt="driving licence front" srcset="" />
+        <img [src]="data.element.dlBack" alt="driving licence back" srcset="" />
+      </div>
+    </div>
+    <div class="details">
+      <h3>Registration Certificate</h3>
+      <div class="space-around">
+        <img [src]="data.element.rcFront" alt="registration certificate front" srcset="" />
+        <img [src]="data.element.rcBack" alt="registration certificate back" srcset="" />
+      </div>
+    </div>
+  </section>
+
+  <div class="action-btn">
+    <button mat-raised-button color="primary" mat-dialog-close="approved">
+      Approved
+    </button>
+  </div>
+</div>

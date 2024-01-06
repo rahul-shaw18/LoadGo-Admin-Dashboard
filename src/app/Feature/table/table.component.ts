@@ -62,6 +62,4 @@ export class TableComponent implements OnChanges, OnInit, AfterViewInit {
     this.selectedDriver.emit(data)
   }
 
-
-
 }

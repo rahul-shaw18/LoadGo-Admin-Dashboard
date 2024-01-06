@@ -27,6 +27,7 @@ import { AddRiderComponent } from './Core/riders/component/add-rider/add-rider.c
 import { AddDriverComponent } from './Core/drivers/component/add-driver/add-driver.component';
 import { AddVehicleComponent } from './Core/vehicle/component/add-vehicle/add-vehicle.component';
 import { AddPagesComponent } from './Core/pages/component/add-pages/add-pages.component';
+import { DocumentsComponent } from './Core/drivers/component/documents/documents.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { AddPagesComponent } from './Core/pages/component/add-pages/add-pages.co
     AddDriverComponent,
     AddVehicleComponent,
     AddPagesComponent,
+    DocumentsComponent,
   ],
   imports: [
     BrowserModule,
