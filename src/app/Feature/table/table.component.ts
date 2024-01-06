@@ -1,9 +1,11 @@
 import {
   AfterViewInit,
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
@@ -21,6 +23,8 @@ export class TableComponent implements OnChanges, OnInit, AfterViewInit {
   @Input() tableData: any;
   @Input() displayedColumns: any;
   @Input() tableToDisplay!: any;
+
+  @Output() selectedDriver = new EventEmitter<Object>
   dataSource: any;
   @ViewChild(MatPaginator) paginator?: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -49,7 +53,15 @@ export class TableComponent implements OnChanges, OnInit, AfterViewInit {
     console.log(row);
   }
 
-  onClicked(element: any) {
-    console.log(element);
+  onClicked(element: Object,selectedOption:string) {
+    console.log(element, selectedOption);
+    let data = {
+      element: element,
+      selectedOption:selectedOption
+    }
+    this.selectedDriver.emit(data)
   }
+
+
+
 }

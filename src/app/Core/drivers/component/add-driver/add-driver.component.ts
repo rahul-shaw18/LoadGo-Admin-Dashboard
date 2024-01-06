@@ -14,24 +14,27 @@ export class AddDriverComponent {
     public dialogRef: MatDialogRef<AddDriverComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
+   let { element } = this.data
+
     this.myForm = this.formBuilder.group({
-      driverName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      driverName: [element?.driverName?element?.driverName:'', Validators.required],
+      email: [element?.email?element?.email:'', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
-      accountHolderName: ['', [Validators.required]],
-      accountNumber: ['', [Validators.required]],
-      bankName: ['', [Validators.required]],
-      bankLocation: ['', [Validators.required]],
-      swiftCode: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      paymentEmail: ['', [Validators.required]],
-      contact: ['', Validators.required],
-      vehicleType: ['', Validators.required],
-      profileImage: [null, Validators.required],
+      accountHolderName: [element?.accountHolderName?element?.accountHolderName:'', [Validators.required]],
+      accountNumber: [element?.accountNumber?element?.accountNumber:'', [Validators.required]],
+      bankName: [element?.bankName?element?.bankName:'', [Validators.required]],
+      bankLocation: [element?.bankLocation?element?.bankLocation:'', [Validators.required]],
+      swiftCode: [element?.swiftCode?element?.swiftCode:'', [Validators.required]],
+      address: [element?.address?element?.address:'', [Validators.required]],
+      paymentEmail: [element?.email?element?.email:'', [Validators.required]],
+      contact: [element?.phone?element?.phone:'', Validators.required],
+      vehicleType: [element?.email?element?.email:'', Validators.required],
+      profileImage: [element?.email?element?.email:null, Validators.required],
     });
   }
 

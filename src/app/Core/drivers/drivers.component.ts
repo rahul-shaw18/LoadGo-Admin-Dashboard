@@ -1,10 +1,10 @@
 import { ApiService } from './../../Shared/services/api.service';
 import { Component } from '@angular/core';
 import { DialogService } from 'src/app/Shared/services/dialog.service';
-import { TableService } from 'src/app/Shared/services/table.service';
 import { AddDriverComponent } from './component/add-driver/add-driver.component';
 import { driverOptions } from 'src/app/Shared/utils/menuOptions-utils';
 import { Observable, catchError, of } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-drivers',
@@ -16,9 +16,9 @@ export class DriversComponent {
   driversOptions = driverOptions;
 
   constructor(
-    private tableService: TableService,
     private dialogService: DialogService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -39,6 +39,7 @@ export class DriversComponent {
     'vehicleType',
     'isActive',
     'status',
+    'options',
   ];
 
   onSelectedOption(e: any) {
@@ -49,6 +50,24 @@ export class DriversComponent {
     console.log(e);
   }
   addDriver() {
-    this.dialogService.openDialog(AddDriverComponent);
+    const dialogRef = this.dialog.open(AddDriverComponent, {
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed', result);
+    });
+  }
+
+  handleSelectedDriver(e:Object) {
+    console.log(e)
+
+    const dialogRef = this.dialog.open(AddDriverComponent, {
+      data: e,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed', result);
+    });
   }
 }

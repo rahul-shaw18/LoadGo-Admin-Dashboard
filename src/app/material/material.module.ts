@@ -10,6 +10,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 const MaterialComponents = [
   MatMenuModule,
@@ -24,6 +25,7 @@ const MaterialComponents = [
   MatSortModule,
   MatIconModule,
   MatDialogModule,
+  MatTooltipModule
 ];
 
 

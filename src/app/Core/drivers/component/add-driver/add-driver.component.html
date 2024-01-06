@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Add Driver</h1>
+    <h1>{{data?.selectedOption ? data?.selectedOption : 'Add '}} Driver</h1>
     <hr />
     <section class="form">
         <form [formGroup]="myForm" (ngSubmit)="onSubmit()">

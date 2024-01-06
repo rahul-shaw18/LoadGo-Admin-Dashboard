@@ -1,17 +1,21 @@
 <div class="container">
-    <h1>Drivers</h1>
-    <hr />
-    <div class="container">
-        <div class="header-section">
-            <app-auto-complete [placeholder]="'Search...'"
-                [providedOption]="driversOptions[0].displayName" [options]="driversOptions"
-                (selectedOptions)="onSelectedOption($event)" (inputValue)="onInputValue($event)"></app-auto-complete>
-            <button class="add-rider-btn" mat-flat-button color="primary" (click)="addDriver()">Add Driver</button>
+    <div class="header-section">
+        <h1>Driver</h1>
+        <div class="actions">
+
+        <button class="add-rider-btn" mat-flat-button color="primary" (click)="addDriver()">Add Driver</button>
         </div>
-        <hr />
+    </div>
+    <hr />
+    <div class="wrapper">
+
+
         <div class="table">
+            <app-auto-complete class="auto-complete" [placeholder]="'Search...'"
+            [providedOption]="driversOptions[0].displayName" [options]="driversOptions"
+            (selectedOptions)="onSelectedOption($event)" (inputValue)="onInputValue($event)"></app-auto-complete>
             <app-table [tableData]="tableData$ | async" [displayedColumns]="displayedColumns"
-                [tableToDisplay]="'Drivers'"></app-table>
+                [tableToDisplay]="'Drivers'" (selectedDriver)="handleSelectedDriver($event)"></app-table>
         </div>
     </div>
 

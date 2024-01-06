@@ -1,20 +1,30 @@
 .container {
 
-  .container {
-    overflow-y: scroll;
-    height: 75vh;
-    .header-section {
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .actions {
       display: flex;
-      justify-content: space-between;
+      gap: 10px;
       align-items: center;
-      padding: 5px 0;
+
+      .auto-complete {
+        ::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+          padding: 4px;
+        }
+      }
     }
+  }
+
+  .wrapper {
+    overflow-y: auto;
+    height: 75vh;
+
+
     hr {
       margin: 0.5rem;
-    }
-    .table {
-      height: 85vh;
-      overflow-y: auto;
     }
   }
 }

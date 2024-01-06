@@ -1,22 +1,6 @@
 .container {
   .wrapper {
     height: 75vh;
-    
     overflow-y: auto;
-    .table {
-      width: 99%;
-      border: 1px solid #f5f5f5;
-      position: relative;
-      .auto-complete {
-        position: absolute;
-        right: 0;
-        top: 9.5px;
-        ::ng-deep
-          .mat-mdc-text-field-wrapper.mdc-text-field--outlined
-          .mat-mdc-form-field-infix {
-          padding: 4px;
-        }
-      }
-    }
   }
 }
