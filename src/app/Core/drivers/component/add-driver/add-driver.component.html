@@ -1,7 +1,7 @@
 <div class="container">
     <div class="space-between">
         <h1>{{data?.selectedOption ? data?.selectedOption : 'Add '}} Driver</h1>
-        <i class="fa-solid fa-user-pen cursor-pointer" matTooltip="Edit Driver" matTooltipPosition="above" (click)="onClicked()"></i>
+        <i *ngIf="showEditBtn" class="fa-solid fa-user-pen cursor-pointer" matTooltip="Edit Driver" matTooltipPosition="above" (click)="onClicked()"></i>
     </div>
     <hr />
     <section class="form">

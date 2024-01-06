@@ -10,17 +10,23 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class AddDriverComponent {
   myForm!: FormGroup;
   profileImage: any;
-  isEditable:boolean = true
+  isEditable: boolean = true
+  showEditBtn = false
   constructor(
     public dialogRef: MatDialogRef<AddDriverComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder
   ) {
+    if (!Object.keys(data).length) {
+      this.isEditable = false
+    } else {
+      this.showEditBtn = true
+    }
   }
 
   ngOnInit() {
    let { element } = this.data
-
+    
    this.myForm = this.formBuilder.group({
     driverName: [{ value: element?.driverName ? element?.driverName : '', disabled: this.isEditable }, Validators.required],
     email: [{ value: element?.email ? element?.email : '', disabled: this.isEditable }, [Validators.required, Validators.email]],
