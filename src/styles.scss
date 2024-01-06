@@ -1033,10 +1033,9 @@ mat-icon {
     position: absolute;
     right: 0;
     top: 9.5px;
-    ::ng-deep
-      .mat-mdc-text-field-wrapper.mdc-text-field--outlined
-      .mat-mdc-form-field-infix {
-      padding: 4px;
-    }
   }
+}
+
+.mat-typography h1{
+  margin: 0;
 }

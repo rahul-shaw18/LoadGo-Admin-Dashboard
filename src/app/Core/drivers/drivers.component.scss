@@ -10,11 +10,8 @@
       gap: 10px;
       align-items: center;
 
-      .auto-complete {
-        ::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
-          padding: 4px;
-        }
-      }
+
+
     }
   }
 
@@ -28,3 +25,7 @@
     }
   }
 }
+
+// ::ng-deep .auto-complete .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+//   padding: 4px !important;
+// }
