@@ -13,4 +13,8 @@ export class ApiService {
   getDriver() {
     return this.http.get(`${this.BASE_URL}getDriver.php`)
   }
+
+  getRiders() {
+    return this.http.get(`${this.BASE_URL}getAllRides.php`)
+  }
 }

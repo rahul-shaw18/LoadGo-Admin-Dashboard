@@ -3,6 +3,6 @@
     <hr />
     <section class="table">
         <button class="add-rider-btn" mat-flat-button color="primary" (click)="openAddRider()" >Add Rider</button>
-        <app-table [tableData]="tableData" [displayedColumns]="displayedColumns" [tableToDisplay]="'Rider'"></app-table>
+        <app-table [tableData]="tableData$ | async" [displayedColumns]="displayedColumns" [tableToDisplay]="'Rider'"></app-table>
     </section>
 </div>
