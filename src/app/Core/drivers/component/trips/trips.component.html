@@ -1,0 +1,4 @@
+<section class="trip-container">
+    <app-table [tableData]="tableData$ | async" [displayedColumns]="displayedColumns" [tableToDisplay]="'Trips'"
+    (selectedDriver)="handleSelectedDriver($event)"></app-table>
+</section>

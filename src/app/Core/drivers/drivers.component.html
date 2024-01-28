@@ -3,7 +3,7 @@
         <h1>Driver</h1>
         <div class="actions">
 
-        <button class="add-rider-btn" mat-flat-button color="primary" (click)="addDriver()">Add Driver</button>
+            <button class="add-rider-btn" mat-flat-button color="primary" (click)="addDriver()">Add Driver</button>
         </div>
     </div>
     <hr />
@@ -12,8 +12,8 @@
 
         <div class="table">
             <app-auto-complete class="auto-complete" [placeholder]="'Search...'"
-            [providedOption]="driversOptions[0].displayName" [options]="driversOptions"
-            (selectedOptions)="onSelectedOption($event)" (inputValue)="onInputValue($event)"></app-auto-complete>
+                [providedOption]="driversOptions[0].displayName" [options]="driversOptions"
+                (selectedOptions)="onSelectedOption($event)" (inputValue)="onInputValue($event)"></app-auto-complete>
             <app-table [tableData]="tableData$ | async" [displayedColumns]="displayedColumns"
                 [tableToDisplay]="'Drivers'" (selectedDriver)="handleSelectedDriver($event)"></app-table>
         </div>

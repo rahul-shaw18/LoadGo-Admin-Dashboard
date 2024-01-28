@@ -51,6 +51,7 @@ export class AddDriverComponent {
   }
 
   onSubmit() {
+    this.dialogRef.close()
     // Handle form submission logic here
     // Access form values using this.myForm.value
   }

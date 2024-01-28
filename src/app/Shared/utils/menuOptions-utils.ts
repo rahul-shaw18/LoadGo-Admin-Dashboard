@@ -8,7 +8,7 @@ export const menuOptions = [
   },
   {
     id: 2,
-    name: 'Riders',
+    name: 'Customers',
     route: 'riders',
     icon: 'fa-solid fa-user',
     isSelected: false,

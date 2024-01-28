@@ -25,9 +25,12 @@
     </div>
   </section>
 
-  <div class="action-btn">
-    <button mat-raised-button color="primary" mat-dialog-close="approved">
-      Approved
+  <div class="action-btn d-flex-gap10">
+    <button mat-raised-button color="primary" (click)="handleApprove()">
+      Approve
+    </button>
+    <button mat-raised-button color="secondary" mat-dialog-close="cancel">
+      Cancel
     </button>
   </div>
 </div>

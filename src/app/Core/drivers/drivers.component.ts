@@ -6,6 +6,7 @@ import { driverOptions } from 'src/app/Shared/utils/menuOptions-utils';
 import { Observable, catchError, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { DocumentsComponent } from './component/documents/documents.component';
+import { TripsComponent } from './component/trips/trips.component';
 
 @Component({
   selector: 'app-drivers',
@@ -53,7 +54,6 @@ export class DriversComponent {
   addDriver() {
     const dialogRef = this.dialog.open(AddDriverComponent, {
       data: {},
-  
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -61,15 +61,31 @@ export class DriversComponent {
     });
   }
 
-  handleSelectedDriver(e:any) {
-    console.log(e)
+  handleSelectedDriver(e: any) {
+    console.log(e);
 
-    const dialogRef = this.dialog.open(e?.selectedOption == 'view-documents' ? DocumentsComponent:AddDriverComponent, {
+    let openComponent: any;
+    if (e.selectedOption == 'view-documents') {
+      openComponent = DocumentsComponent;
+    }else if(e.selectedOption == 'view-trips') {
+      openComponent = TripsComponent;
+    } else {
+      openComponent = AddDriverComponent;
+    }
+
+    const dialogRef = this.dialog.open(openComponent, {
       data: e,
+      disableClose: e.selectedOption == 'view-documents' ? true : false,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed', result);
+      if (e.selectedOption == 'view-documents') {
+        console.log(result.status)
+        if (result.status == 'approve') {
+          this.ngOnInit()
+        }
+      }
     });
   }
 }

@@ -14,7 +14,12 @@ export class ApiService {
     return this.http.get(`${this.BASE_URL}getDriver.php`)
   }
 
-  getRiders() {
-    return this.http.get(`${this.BASE_URL}getAllRides.php`)
+  getRiders(filter?: any) {
+    if(filter) {return this.http.get(`${this.BASE_URL}getAllRides.php${filter}`)}
+    else return this.http.get(`${this.BASE_URL}getAllRides.php`)
+  }
+
+  patchDriverDetails(payload:any) {
+    return this.http.patch(`${this.BASE_URL}patchDriver.php`,payload)
   }
 }
