@@ -18,9 +18,7 @@ export class DocumentsComponent {
     console.log(this.data);
     let payload = {
       id: this.data.element.id,
-      contactNumber: '1234567890',
-      lat: this.data.element.currentLocation.lat,
-      lng: this.data.element.currentLocation.lng,
+      isVerified:'3'
     };
     this.apiService.patchDriverDetails(payload).subscribe((res) => {
       console.log(res);
