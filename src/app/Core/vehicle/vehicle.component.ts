@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DialogService } from 'src/app/Shared/services/dialog.service';
 import { TableService } from 'src/app/Shared/services/table.service';
 import { AddVehicleComponent } from './component/add-vehicle/add-vehicle.component';
+import { ApiService } from 'src/app/Shared/services/api.service';
 
 @Component({
   selector: 'app-vehicle',
@@ -13,25 +14,32 @@ export class VehicleComponent {
 
   constructor(
     private tableService: TableService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private apiService: ApiService
   ) {}
 
   ngOnInit() {
-    this.tableData = this.tableService.getTableData();
+    // this.tableData = this.tableService.getTableData();
+    this.apiService.getUsers().subscribe({
+      next:(res)=> {
+        console.log(res)
+        this.tableData = res
+      },
+    })
   }
 
   // table
   displayedColumns: string[] = [
-    'rideId',
-    'riderName',
-    'driverName',
-    'pickDropAddress',
-    'date',
-    'rideFare',
-    'status',
+    'id',
+    'name',
+    'email',
+    'phone',
+    'address',
+    // 'pushToken',
+    'refferedBy',
   ];
 
-  addVehicle() {
+  addUser() {
     this.dialogService.openDialog(AddVehicleComponent);
   }
 }

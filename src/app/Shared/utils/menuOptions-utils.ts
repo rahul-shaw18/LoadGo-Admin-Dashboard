@@ -36,7 +36,7 @@ export const menuOptions = [
   // },
   {
     id: 6,
-    name: 'Vehicle',
+    name: 'Users',
     icon: 'icon-cab',
     route: 'vehicle',
     isSelected: false,
