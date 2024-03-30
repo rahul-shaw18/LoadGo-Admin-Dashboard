@@ -3,6 +3,7 @@ import { DialogService } from 'src/app/Shared/services/dialog.service';
 import { TableService } from 'src/app/Shared/services/table.service';
 import { AddVehicleComponent } from './component/add-vehicle/add-vehicle.component';
 import { ApiService } from 'src/app/Shared/services/api.service';
+import { Observable, catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-vehicle',
@@ -10,7 +11,7 @@ import { ApiService } from 'src/app/Shared/services/api.service';
   styleUrls: ['./vehicle.component.scss'],
 })
 export class VehicleComponent {
-  tableData: any;
+  tableData$!: Observable<any>;
 
   constructor(
     private tableService: TableService,
@@ -19,13 +20,12 @@ export class VehicleComponent {
   ) {}
 
   ngOnInit() {
-    // this.tableData = this.tableService.getTableData();
-    this.apiService.getUsers().subscribe({
-      next:(res)=> {
-        console.log(res)
-        this.tableData = res
-      },
-    })
+    this.tableData$ = this.apiService.getUsers().pipe(
+      catchError((err) => {
+        console.log(err);
+        return of([]);
+      })
+    );
   }
 
   // table

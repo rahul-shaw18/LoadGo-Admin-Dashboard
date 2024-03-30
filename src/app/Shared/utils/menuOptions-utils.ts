@@ -8,7 +8,7 @@ export const menuOptions = [
   },
   {
     id: 2,
-    name: 'Customers',
+    name: 'Rides',
     route: 'riders',
     icon: 'fa-solid fa-user',
     isSelected: false,
@@ -20,13 +20,13 @@ export const menuOptions = [
     icon: 'icon-steering-wheel',
     isSelected: false,
   },
-  {
-    id: 4,
-    name: 'Rides',
-    route: 'rides',
-    icon: 'fa-solid fa-car',
-    isSelected: false,
-  },
+  // {
+  //   id: 4,
+  //   name: 'Rides',
+  //   route: 'rides',
+  //   icon: 'fa-solid fa-car',
+  //   isSelected: false,
+  // },
   // {
   //   id: 5,
   //   name: 'Manual Ride Booking',
